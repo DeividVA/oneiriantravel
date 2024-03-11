@@ -147,7 +147,7 @@ Aquí es. "La Sardina Indiscreta". Vaya nombre...
 
 
 === continue2 ===
-
+Tienes {DreamPoints} puntos de sueño.
 Cheese: Bueno te veré dentro, amigo.
 Cheese: Una última cosa: cuida bien lo que guardas en el bolsillo de tu chaqueta... ja, ja, ja...
  {not takeclock:
