@@ -86,7 +86,7 @@ Siento la tentación de acercarme y cogerlo. Pero tal como está la ciudad hoy e
  === leaveclock ===
 ~DreamPoints -= 1
 Voy a llegar tarde y no pienso meter las manos en un cubo de basura.
-No puedo perder más el tiempo aquí. En cinco minutos va a empezar la cena.
+No puedo perder más el tiempo aquí. En veinte minutos va a empezar la cena.
 Vamos, vamos...
 -> continue
  
@@ -128,8 +128,25 @@ Aquí es. "La Sardina Indiscreta". Vaya nombre...
 
 ¿Cheese?
 
+
+-> cheese_choice
+
+=== cheese_choice ===
+
+    * La verdad es que no caigo ahora mismo. Refréscame la memoria.
+    ~DreamPoints += 0
+    -> continue2
+    * ¿Qué clase de nombre es ese?
+    ~DreamPoints += 1
+    -> continue2
+    * Sí, sí que me acuerdo.
+    ~DreamPoints -= 1
+    -> continue2
+
 //pequeña conversación con una pregunta y dos o tres opciones
 
+
+=== continue2 ===
 
 Cheese: Bueno te veré dentro, amigo.
 Cheese: Una última cosa: cuida bien lo que guardas en el bolsillo de tu chaqueta... ja, ja, ja...
@@ -141,10 +158,12 @@ Cheese: Una última cosa: cuida bien lo que guardas en el bolsillo de tu chaquet
  Cheese: Ciaooo...
  Cheese: Vaya, qué oscuro está aquí dentro...
 (Cheese desaparece en la oscuridad del restaurante. La puerta se cierra).
-Vaya tipo más extraño.
+Vaya personaje más extraño.
 Supongo que tendré que entrar.
 En fin, vaya nochecita. ¿Y por qué esta esto tan oscuro? 
 ¿Pero qué?
+
+(El interior es enorme y parece no haber paredes, solo está iluminado por unas antorchas lejanas que parecen flotar en el aire)
 
 
 -> sleepN2_knot
