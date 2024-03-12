@@ -1,5 +1,7 @@
 // Global variables
 VAR DreamPoints = 5
+VAR Need = ""
+VAR Count = 0
 
 -> start_knot
 
@@ -72,6 +74,7 @@ Gato: Miau.
 Un momento... Este reloj...
 Este reloj es igual que el que tenía de pequeño, el que me regalaron mis amigos en mi cumpleaños.
 Dios, debía tener diez años o menos.
+Parece que este ha perdido la correa.
 Siento la tentación de acercarme y cogerlo. Pero tal como está la ciudad hoy en día, quién sabe lo que pueden haber echado ahí.
 
 -> clockchoice_knot
@@ -92,8 +95,8 @@ Vamos, vamos...
  
  === takeclock ===
  ~DreamPoints += 1
- Era justo este modelo. Es increíble. Qué recuerdos. Recuerdo la esfera y estas manecillas con el pingüino y la morsa... //revisar
- Tengo que llevármelo. Ya veré después qué hago con él.
+ Era justo este modelo. Es increíble. Qué recuerdos. Recuerdo la esfera redondeada y estas manecillas con el pingüino y la morsa...
+  Tengo que llevármelo. Ya veré después qué hago con él.
  (Lo guarda en el bolsillo de la chaqueta)
 -> continue
 
@@ -114,10 +117,12 @@ Este es el nivel de sueño sleep N1: Adormecimiento
 Uf...
 Uf...
 ¿Qué... qué... me ha pasado?
+¿Debería ir al médico? No, no puedo... Creo que estoy bien.
+Y la reunión es demasiado importante para mi reputación.
 ¿Dónde está... el gato?
 Agh... Son ya las nueve. Tengo que irme corriendo.
 
-Hombre: Vaya, vaya... Al fin me hiciste caso. ¿Qué tal, amigo?
+???: Vaya, vaya... Al fin me hiciste caso. ¿Qué tal, amigo?
 
 (Se va corriendo, llega a la puerta del restaurante)
 
@@ -134,19 +139,74 @@ Aquí es. "La Sardina Indiscreta". Vaya nombre...
 === cheese_choice ===
 
     * La verdad es que no caigo ahora mismo. Refréscame la memoria.
-    ~DreamPoints += 0
-    -> continue2
+    -> dunno
     * ¿Qué clase de nombre es ese?
-    ~DreamPoints += 1
-    -> continue2
+    -> what
     * Sí, sí que me acuerdo.
-    ~DreamPoints -= 1
+    -> yeah
+
+    === dunno ===
+    ~DreamPoints += 0
+    Cheese: Hmm. Sinceridad ante todo, ¿eh?
     -> continue2
-
-//pequeña conversación con una pregunta y dos o tres opciones
-
+    === what ===
+    ~DreamPoints += 1
+    Cheese: Ja, ja, ja. Me gusta tu sentido del humor.
+    -> continue2
+    === yeah ===
+    ~DreamPoints -= 1
+    Cheese: Agh. Se te nota que mientes.
+    -> continue2
 
 === continue2 ===
+Cheese:
+Cheese: Y cuéntame, ¿qué tal todo?
+Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero?
+-> interest_choice
+
+=== interest_choice ===
+Cheese: ...
+* Hablar sobre mis amigos.
+-> friends
+* Hablar sobre mis compañeros de trabajo.
+-> pals
+* Hablar sobre mis padres.
+-> momdad
+
+    === friends ===
+    Pues bien.
+    ~Need = "cuero"
+    ~Count += 1
+    {Count:
+        -3: -> endconver
+    }
+    -> interest_choice
+
+
+    === pals ===
+    Pues bien.
+    ~Need = "metal"
+    ~Count += 1
+    {Count:
+        -3: -> endconver
+    }
+    -> interest_choice
+
+    === momdad ===
+    Pues bien.
+    ~Need = "caucho"
+    ~Count += 1
+    {Count:
+       -3: -> endconver
+    }
+    -> interest_choice
+
+    === endconver ===
+    -> continue3
+
+
+
+=== continue3 ===
 Tienes {DreamPoints} puntos de sueño.
 Cheese: Bueno te veré dentro, amigo.
 Cheese: Una última cosa: cuida bien lo que guardas en el bolsillo de tu chaqueta... ja, ja, ja...
@@ -154,13 +214,13 @@ Cheese: Una última cosa: cuida bien lo que guardas en el bolsillo de tu chaquet
  Hmmm... ¿Qué es esto?
  ¿Por qué tengo el reloj en el bolsillo?
  }
- S... sí.
+ ¿Qué? ¿Por qué tiene una correa de {Need}? 
  Cheese: Ciaooo...
  Cheese: Vaya, qué oscuro está aquí dentro...
 (Cheese desaparece en la oscuridad del restaurante. La puerta se cierra).
 Vaya personaje más extraño.
 Supongo que tendré que entrar.
-En fin, vaya nochecita. ¿Y por qué esta esto tan oscuro? 
+En fin, vaya nochecita. ¿Y por qué está esto tan oscuro? 
 ¿Pero qué?
 
 (El interior es enorme y parece no haber paredes, solo está iluminado por unas antorchas lejanas que parecen flotar en el aire)
