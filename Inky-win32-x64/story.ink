@@ -22,7 +22,7 @@ Otra Navidad más en Puerto Viejo.
 Estoy cansado de esta ciudad.
 Para colmo se me ha vuelto a estropear el coche.
 Y tengo que ir andando a la cena de Navidad de la empresa.
-Justo hoy, que hablaremos de los planes de importación del año que viene.
+Justo hoy, que hablaremos de los planes de importación del año que viene. Y estaba invitado el pez gordo aquel de New Port.
 Es importante que esté presente. Me juego el ascenso.
 Aggh... este dolor de cabeza...
 ...
@@ -142,7 +142,7 @@ Aquí es. "La Sardina Indiscreta". Vaya nombre...
     -> dunno
     * ¿Qué clase de nombre es ese?
     -> what
-    * Sí, sí que me acuerdo.
+    * Sí, claro, sí que me acuerdo.
     -> yeah
 
     === dunno ===
@@ -151,7 +151,7 @@ Aquí es. "La Sardina Indiscreta". Vaya nombre...
     -> continue2
     === what ===
     ~DreamPoints += 1
-    Cheese: Ja, ja, ja. Me gusta tu sentido del humor.
+    Cheese: Ja, ja, ja. Me gusta tu sentido del humor. Has ganado en ironía con los años.
     -> continue2
     === yeah ===
     ~DreamPoints -= 1
@@ -159,13 +159,18 @@ Aquí es. "La Sardina Indiscreta". Vaya nombre...
     -> continue2
 
 === continue2 ===
-Cheese:
+Disculpa es que creo que no te conozco. Aunque tengo la sensación de que te he visto antes en alguna parte.
+Cheese: Hmm... más bien la cuestión es que no me recuerdas, pero no te diste cuenta todavía. Pero date tiempo, amigo. Aunque creo que tiempo es lo que te falta ahora mismo. ¿No se te quita de la cabeza esa reunión de negocios, verdad?
+(¿Cómo puede este tipo saber toda mi vida?)
+Cheese: Ja, ja, tranquilo... Dejemos al tiempo que sea quien me descubra.
+(Qué forma de hablar más extraña. Pero no sé por qué, de algún modo parece que me es familiar. ¿Será alguien del colegio, de cuándo era pequeño?)
+...
 Cheese: Y cuéntame, ¿qué tal todo?
-Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero?
+Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero Isaac?
 -> interest_choice
 
 === interest_choice ===
-Cheese: ...
+(No sé quién es este tipo y por qué sabe tanto de mí, pero una fuerza extraña me incita a hablar)
 * Hablar sobre mis amigos.
 -> friends
 * Hablar sobre mis compañeros de trabajo.
@@ -174,8 +179,12 @@ Cheese: ...
 -> momdad
 
     === friends ===
-    Pues bien.
-    ~Need = "cuero"
+    Pues, eh, bien. Jorge se marcha ahora a Suecia. Va a pasar frío allí... je, je.
+    (¿Pero qué estoy diciendo?)
+    En realidad, hace tiempo que no los veo. Pero es que la agenda está demasiado apretada. Y desde lo que pasó la última vez. La época en que ellos dos estaban enrollados... Entre eso y mi trabajo nos distanciamos bastante. Y aquella maldita pelea. No quiero ni acordarme... Y ojalá hubiera sido más sincero con Elena.
+    (¿Pero por qué hablo de esto con un desconocido?)
+    En fin...
+        ~Need = "cuero"
     ~Count += 1
     {Count:
         -3: -> endconver
@@ -184,7 +193,13 @@ Cheese: ...
 
 
     === pals ===
-    Pues bien.
+    Pues, eh, bien. La verdad es que es un tipo muy competente. Desde que entró la productividad de la empresa subió un 170%.
+    (¿Qué haces? ¡Eso es confidencial!)
+    Hicieron bien en contratarle, porque yo estaba desbordado. Pero lo cierto es que empecé a sentir envidia. Además es un tanto arrogante.
+    Solo que luego me empezó a contar de sus problemas, y empezamos a caernos bien. Teníamos más cosas en común de lo que pensábamos.
+    Incluso es de los Sharks como yo.
+    (¿Pero por qué le cuento esto?)
+    En fin...
     ~Need = "metal"
     ~Count += 1
     {Count:
@@ -193,7 +208,13 @@ Cheese: ...
     -> interest_choice
 
     === momdad ===
-    Pues bien.
+    Pues, eh, bien. Los dos con sus achaques. Pero son pequeños. Bueno, lo de Papá... Por suerte parece que fue solo un susto.
+    (¿Pero qué le importa esto a este tipo?
+    Está igual de terco que siempre, y eso me tranquiliza. Mira que me peleaba antes con él. Pero ahora cada vez lo echo más de menos. Ojalá pudiera ir más veces los fines de semana.
+    Mamá tan cariñosa como siempre. Aunque ahora toca menos el piano y eso me preocupa.
+    Recuerdo cuando era pequeño y tocaba para mí. Me relajaba los días que me hacía pis en la cama.
+    (Dios, esto es demasiado personal)
+    En fin...
     ~Need = "caucho"
     ~Count += 1
     {Count:
@@ -208,7 +229,11 @@ Cheese: ...
 
 === continue3 ===
 Tienes {DreamPoints} puntos de sueño.
+Aggh... me ha vuelto el dolor de cabeza.
+Cheese: Está bien. No te apures, déjalo estar. Se te nota en la cara que no lo estás pasando bien con las prisas. Y después de estar un rato inconsciente.
+¿Qué? ¿He estado inconsciente? ¿Cömo lo sabes?
 Cheese: Bueno te veré dentro, amigo.
+Espera...
 Cheese: Una última cosa: cuida bien lo que guardas en el bolsillo de tu chaqueta... ja, ja, ja...
  {not takeclock:
  Hmmm... ¿Qué es esto?
@@ -224,7 +249,7 @@ En fin, vaya nochecita. ¿Y por qué está esto tan oscuro?
 ¿Pero qué?
 
 (El interior es enorme y parece no haber paredes, solo está iluminado por unas antorchas lejanas que parecen flotar en el aire)
-
+(Solo se escuchan el sonido de tus pasos, como si estuvieras dentro de un enorme vaso hueco)
 
 -> sleepN2_knot
 
