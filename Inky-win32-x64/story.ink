@@ -231,7 +231,7 @@ Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero I
 Tienes {DreamPoints} puntos de sueño.
 Aggh... me ha vuelto el dolor de cabeza.
 Cheese: Está bien. No te apures, déjalo estar. Se te nota en la cara que no lo estás pasando bien con las prisas. Y después de estar un rato inconsciente.
-¿Qué? ¿He estado inconsciente? ¿Cömo lo sabes?
+¿Qué? ¿He estado inconsciente? ¿Y cómo lo sabes?
 Cheese: Bueno te veré dentro, amigo.
 Espera...
 Cheese: Una última cosa: cuida bien lo que guardas en el bolsillo de tu chaqueta... ja, ja, ja...
