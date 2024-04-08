@@ -1,5 +1,5 @@
 // Global variables
-VAR DreamPoints = 5
+VAR DeltaWaves = 5
 VAR Need = ""
 VAR Count = 0
 
@@ -30,32 +30,32 @@ Ummm... ¿Y ese gato?
 
 -> catchoice_knot
 
-=== catchoice_knot ===
-¿Por qué me mira fijamente?
+    === catchoice_knot ===
+    ¿Por qué me mira fijamente?
+    
+     * Ignorar y continuar el camino.
+     -> ignorecat
+     * Mirar.
+     -> lookatcat
+     
+     === ignorecat ===
+    
+    ~DeltaWaves -= 1
+    
+    (El gato le persigue y maúlla)
+    
+    ¿Pero bueno? ¿Otra vez estás aquí? ¿Qué quieres?
+    
+    -> catchoice_knot
+    
+    -> DONE
 
- * Ignorar y continuar el camino.
- -> ignorecat
- * Mirar.
- -> lookatcat
- 
- === ignorecat ===
-
-~DreamPoints -= 1
-
-(El gato le persigue y maúlla)
-
-¿Pero bueno? ¿Otra vez estás aquí? ¿Qué quieres?
-
--> catchoice_knot
-
--> DONE
-
- === lookatcat ===
- {not ignorecat:
- ~DreamPoints += 1
- }
-
-Tienes {DreamPoints} puntos de sueño.
+     === lookatcat ===
+     {not ignorecat:
+     ~DeltaWaves += 1
+     }
+    
+Tienes {DeltaWaves} ondas delta.
 
 (El gato se aleja un par de metros y vuelve a mirarle, como queriendo que le siga) 
 Dios, maldito gato, voy a tener que correr.
@@ -81,34 +81,34 @@ Siento la tentación de acercarme y cogerlo. Pero tal como está la ciudad hoy e
 
 -> clockchoice_knot
 
-=== clockchoice_knot ===
-
- * Debería irme. 
- -> leaveclock
- * Debería cogerlo.
- -> takeclock
- 
- === leaveclock ===
-~DreamPoints -= 1
-Voy a llegar tarde y no pienso meter las manos en un cubo de basura.
-No puedo perder más el tiempo aquí. En veinte minutos va a empezar la cena.
-Vamos, vamos...
--> continue
- 
- === takeclock ===
- ~DreamPoints += 1
- Era justo este modelo. Es increíble. Qué recuerdos. Recuerdo la esfera redondeada y estas manecillas con el pingüino y la morsa...
-  Tengo que llevármelo. Ya veré después qué hago con él.
- (Lo guarda en el bolsillo de la chaqueta)
--> continue
-
-=== continue ===
-
-Tienes {DreamPoints} puntos de sueño.
-Agh, ¿qué me pasa...? Me estoy empezando... a sentir... marea... do...
-(Cae al suelo de rodillas, la pantalla se pone en negro)
-
--> sleepN1_knot
+    === clockchoice_knot ===
+    
+     * Debería irme. 
+     -> leaveclock
+     * Debería cogerlo.
+     -> takeclock
+     
+     === leaveclock ===
+    ~DeltaWaves -= 1
+    Voy a llegar tarde y no pienso meter las manos en un cubo de basura.
+    No puedo perder más el tiempo aquí. En veinte minutos va a empezar la cena.
+    Vamos, vamos...
+    -> continue
+     
+     === takeclock ===
+     ~DeltaWaves += 1
+     Era justo este modelo. Es increíble. Qué recuerdos. Recuerdo la esfera redondeada y estas manecillas con el pingüino y la morsa...
+      Tengo que llevármelo. Ya veré después qué hago con él.
+     (Lo guarda en el bolsillo de la chaqueta)
+    -> continue
+    
+    === continue ===
+    
+    Tienes {DeltaWaves} ondas delta.
+    Agh, ¿qué me pasa...? Me estoy empezando... a sentir... marea... do...
+    (Cae al suelo de rodillas, la pantalla se pone en negro)
+    
+    -> sleepN1_knot
 
 === sleepN1_knot ===
 SUEÑO N1 (NUMBNESS)
@@ -138,7 +138,7 @@ Aquí es. ¿"La Sardina Indiscreta"? Vaya nombre...
 
 -> cheese_choice
 
-=== cheese_choice ===
+    === cheese_choice ===
 
     * La verdad es que no caigo ahora mismo. Refréscame la memoria.
     -> dunno
@@ -148,15 +148,15 @@ Aquí es. ¿"La Sardina Indiscreta"? Vaya nombre...
     -> yeah
 
     === dunno ===
-    ~DreamPoints += 0
+    ~DeltaWaves += 0
     Cheese: Hmm. Sinceridad ante todo, ¿eh?
     -> continue2
     === what ===
-    ~DreamPoints += 1
+    ~DeltaWaves += 1
     Cheese: Ja, ja, ja. Me gusta tu sentido del humor. Has ganado en ironía con los años.
     -> continue2
     === yeah ===
-    ~DreamPoints -= 1
+    ~DeltaWaves -= 1
     Cheese: Agh. Se te nota que mientes.
     -> continue2
 
@@ -171,14 +171,14 @@ Cheese: Y cuéntame, ¿qué tal todo?
 Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero Isaac?
 -> interest_choice
 
-=== interest_choice ===
-(No sé quién es este tipo y por qué sabe tanto de mí, pero una fuerza extraña me incita a hablar)
-* Hablar sobre mis amigos.
--> friends
-* Hablar sobre mis compañeros de trabajo.
--> pals
-* Hablar sobre mis padres.
--> momdad
+    === interest_choice ===
+    (No sé quién es este tipo y por qué sabe tanto de mí, pero una fuerza extraña me incita a hablar)
+    * Hablar sobre mis amigos.
+    -> friends
+    * Hablar sobre mis compañeros de trabajo.
+    -> pals
+    * Hablar sobre mis padres.
+    -> momdad
 
     === friends ===
     Pues, eh, bien. Jorge se marcha ahora a Suecia. Va a pasar frío allí... je, je.
@@ -230,7 +230,7 @@ Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero I
 
 
 === continue3 ===
-Tienes {DreamPoints} puntos de sueño.
+Tienes {DeltaWaves} ondas delta.
 Aggh... me ha vuelto el dolor de cabeza.
 Cheese: Está bien. No te apures, déjalo estar. Se te nota en la cara que no lo estás pasando bien con las prisas. Y después de estar un rato inconsciente.
 ¿Qué? ¿He estado inconsciente? ¿Y cómo lo sabes?
@@ -268,18 +268,18 @@ Este es el nivel de sueño sleep N2: Sueño Ligero
 ???: Color del fuego de la serendipia.
 ???: ...
 ???: Elen síla lúmenn' omentielvo
-???: Uuuuuh, flores del viento emergen
+???: Uuuuuh, flores del viento emergen. ¡Alex!
 
 
 Eeeh, eehh, ¿me está hablando a mí?
 
 -> oneirian_question
 
-=== oneirian_question ===
+    === oneirian_question ===
 
     (Pero qué son estas criaturas. Improvisa algo. ¡Rápido!)
 
-    * (...)
+    * (...) (Quedarse callado)
     -> silence
     * Azutu karaka yodolai penten?
     -> invent
@@ -289,22 +289,22 @@ Eeeh, eehh, ¿me está hablando a mí?
     -> lucky
 
     === silence ===
-    ~DreamPoints -= 1
+    ~DeltaWaves -= 1
     -> continue4
     === invent ===
-    ~DreamPoints -= 1
+    ~DeltaWaves -= 1
     -> continue4
     === sosorry ===
-    ~DreamPoints += 0
+    ~DeltaWaves += 0
     -> continue4
     === lucky ===
-    ~DreamPoints += 1
+    ~DeltaWaves += 1
     -> continue4
     
 
 === continue4 ===
 
-Tienes {DreamPoints} puntos de sueño.
+Tienes {DeltaWaves} ondas delta.
 Cheese: Uhuh, uhuh, uhuh. Espera, espera, espera...
 {lucky:
 Cheese: Esta vez has tenido suerte, pero...
@@ -313,7 +313,7 @@ Cheese: Esta vez has tenido suerte, pero...
 Cheese: Es de mala educación quedarse callado, inventarse palabras...
 }
 Cheese: Vas a necesitar esto.
-{DreamPoints:
+{DeltaWaves:
     -1: Cheese: O lo vas a pasar mal.
 }
 (Has obtenido Diccionario Onírico Multilingüe)
@@ -357,32 +357,32 @@ Sra. Cruz: ¿Verdad que es divertido, Alex?
     -> laugh
 
     === doubt ===
-    ~DreamPoints += 2
+    ~DeltaWaves += 2
     Eh... supongo que sí.
     -> continue5
     === laugh ===
-    ~DreamPoints += 1
+    ~DeltaWaves += 1
     Qué gracioso, sí
     -> continue5
 
-    === continue5 ===
-    Tienes {DreamPoints} puntos de sueño.
-    Sra. Cruz: Sé que no es fácil pillarle el humor al señor Oddstrong, pero ya le irás entendiendo
-    Claro. Es un honor tenerle aquí señor Oddstrong.
-    (Pero, ¿por qué he dicho eso?)
-    (Es como si mi boca hablara sola)
-    (¿Acaso me estoy empezando a sentir tranquilo entre estos seres?)
-    Oddstrong: ...
-    Sr. Florián: Ja, ja, cierto. Usted siempre tan al grano, señor Oddstrong. Se le nota la vena nuevaportina.
-    Sra. Cruz: New Porter, Juan, no seas palurdo. Ya conoce sus modales puertovejeros, señor Oddstrong.
-    Sra. Cruz: Pero bueno, Alex, te ha comido la lengua el gato. Estamos esperando tus informes. El señor Oddstrong está muy interesado en participar en nuestra empresa.
-    Oddstrong: ...
-    Sí. Enseguida.
-    (He vuelto a hacerlo. Siento como si estuviera viendo una película).
-    (Abres tu maletín, pero solo hay dibujos infantiles que hiciste de niño).
-    ¿Qué? ¿De dónde sale esto?
-    (Vaya, parece que la película ha parado. Tengo que hacer algo.)
-    -> papers
+=== continue5 ===
+Tienes {DeltaWaves} ondas delta.
+Sra. Cruz: Sé que no es fácil pillarle el humor al señor Oddstrong, pero ya le irás entendiendo
+Claro. Es un honor tenerle aquí señor Oddstrong.
+(Pero, ¿por qué he dicho eso?)
+(Es como si mi boca hablara sola)
+(¿Acaso me estoy empezando a sentir tranquilo entre estos seres?)
+Oddstrong: ...
+Sr. Florián: Ja, ja, cierto. Usted siempre tan al grano, señor Oddstrong. Se le nota la vena nuevaportina.
+Sra. Cruz: New Porter, Juan, no seas palurdo. Ya conoce sus modales puertovejeros, señor Oddstrong.
+Sra. Cruz: Pero bueno, Alex, te ha comido la lengua el gato. Estamos esperando tus informes. El señor Oddstrong está muy interesado en participar en nuestra empresa.
+Oddstrong: ...
+Sí. Enseguida.
+(He vuelto a hacerlo. Siento como si estuviera viendo una película).
+(Abres tu maletín, pero solo hay dibujos infantiles que hiciste de niño).
+¿Qué? ¿De dónde sale esto?
+(Vaya, parece que la película ha parado. Tengo que hacer algo.)
+-> papers
 
     === papers ===
     * Hacer como si nada y hablar de negocios
@@ -393,30 +393,46 @@ Sra. Cruz: ¿Verdad que es divertido, Alex?
     -> excuse
     
     === act_normally ===
-    ~DreamPoints += 1
-    Como puede ver en esta gráfica, hemos incrementado.
+    ~DeltaWaves += 0
+    Como puede ver en esta gráfica, hemos incrementado un 170% nuestra productividad en los últimos seis meses, lo que es un claro indicio de la proyección al alza de nuestra empresa.
     -> continue6
     === drawings ===
-    ~DreamPoints += 2
-    En este dibujo de aquí.
+    ~DeltaWaves += 1
+    En este dibujo de aquí estoy con mis amigos Elena y Jorge jugando a la pelota en el barrio del muro. Y aquí salgo en clase de niño tirando bolas de papel. La profesora nos riñó mucho aquel día.
     -> continue6
     === excuse ===
-    ~DreamPoints -= 1
-    No, no puedo creerlo.
+    ~DeltaWaves += 0
+    No, no puedo creerlo. ¿Dónde? ¿Dónde están los informes?
     -> continue6
     
     
-    === continue6 ===
-    Tienes {DreamPoints} puntos de sueño.
-    (Vas barajando dibujos mientras hablas. La imagen se dirige hacia el dibujo de la playa. La pantalla se pone en negro)
+=== continue6 ===
+Tienes {DeltaWaves} ondas delta.
+(Vas barajando dibujos mientras hablas. La imagen se dirige hacia un dibujo de la playa. La pantalla se pone en negro)
+
+-> coming_soon
+
+=== coming_soon ===
+
+Has acabado la aventura con {DeltaWaves} ondas delta.
+Vas encaminado hacia los finales { DeltaWaves <= 6: Beta y Gamma} { DeltaWaves >  6: Alfa y Theta}
+
+En la versión final Alex llegará a la playa onírica, el paraíso soñado donde podrá ver gigantescas criaturas del mundo de los sueños. 
+Sorprendentemente se encontrará allí con su amiga Elena, su compañero Isaac y sus padres, que le conducirán por un viaje en el que tendrá que enfrentarse al terrible peligro que amenaza el mundo de Oniria.
     
-    
+/*
 -> sleepN3_knot
 
 === sleepN3_knot ===
 SUEÑO N3 (DEEP SLEEP)
 MUNDO ONÍRICO, PLAYA
 Este es el nivel de sueño sleep N3: Sueño Profundo
+
+(Aquí te encuentras con tu amiga Elena, tus compañeros de trabajo y tus padres en la playa onírica. Criaturas oníricas aparecen por los alrededores y todos las aceptan con normalidad. Conversas con ellos, pero llegado a un punto tienes que elegir entre tu amiga y tu compañero).
+
+(Ella se convierte en una orca. Él se convierte en un toro. Tus padres en un ser de dos cabezas).
+
+(La pantalla se pone en negro).
 
 -> REM_knot
 
@@ -425,13 +441,15 @@ REM
 MUNDO ONÍRICO, CAOS
 Este es el nivel de sueño REM
 
+En la misma posición donde estaban aparecen el alien arpía, el dios reloj y el rex demonio. Tienes que combatirlos con una serie de decisiones, como un rpg. Tu energía son los Dream Points que tengas.
+
 -> awake_knot
 
 === awake_knot ===
  DESPERTAR
  Este es el despertar
+*/
 
-
--> DONE //done del final de la historia
+    -> DONE //done del final de la historia
 
     -> END
