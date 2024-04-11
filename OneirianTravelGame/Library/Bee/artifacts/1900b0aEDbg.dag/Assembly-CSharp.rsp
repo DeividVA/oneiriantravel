@@ -381,6 +381,7 @@
 "Assets/Ink/Demos/Basic Demo/Scripts/BasicInkExample.cs"
 "Assets/Ink/Demos/Basic Demo/Scripts/QuitGameOnKeypress.cs"
 "Assets/Scripts/InkManager.cs"
+"Assets/Scripts/NextButtonScript.cs"
 -langversion:9.0
 
 /deterministic
