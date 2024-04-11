@@ -6,13 +6,13 @@ VAR Count = 0
 -> start_knot
 
 === start_knot ===
-ONEIRIAN TRAVEL
-Demo Version
+ONEIRIAN TRAVEL Demo Version
 
 
 0- AUSENCIA DE LUZ
 LUGAR DESCONOCIDO
-???: Alex... Alex... ¡Ayuda, Alex! Las... mane... cillas... la es... fera...
+???: Alex... Alex... ¡Ayuda, Alex! Las... mane... cillas... 
+???: la es... fera...
 
 -> wakefulness_knot
 
@@ -45,7 +45,7 @@ Alex: Ummm... ¿Y ese gato?
     
     ~DeltaWaves -= 1
     
-    El gato te persigue y maúlla
+    (El gato te persigue y maúlla)
     
     Alex: ¿Pero bueno? ¿Otra vez estás aquí? ¿Qué quieres?
     
@@ -127,7 +127,7 @@ Alex: Y la reunión es demasiado importante para mi reputación.
 Alex: ¿Dónde está... el gato?
 Alex: Agh... Son ya las nueve. Tengo que irme corriendo.
 
-(Se va corriendo, llega a la puerta del restaurante)
+(Te vas corriendo, llegas a la puerta del restaurante)
 
 Alex: Aquí es. ¿"La Sardina Indiscreta"? Vaya nombre...
 ???: Vaya, vaya... Al fin me hiciste caso. ¿Qué tal, amigo?
@@ -212,11 +212,12 @@ Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero I
 
     === momdad ===
     Alex: Pues, eh, bien. Los dos con sus achaques. Pero son pequeños. Bueno, lo de Papá... Por suerte parece que fue solo un susto.
-    Alex: (¿Pero qué le importa esto a este tipo?
-    Alex: Está igual de terco que siempre, y eso me tranquiliza. Mira que me peleaba antes con él. Pero ahora cada vez lo echo más de menos. Ojalá pudiera ir más veces los fines de semana.
+    Alex: ¿Pero qué le importa esto a este tipo? #thought
+    Alex: Está igual de terco que siempre, y eso me tranquiliza. Mira que me peleaba antes con él. Pero ahora cada vez lo echo más de menos. 
+    Alex: Ojalá pudiera ir más veces los fines de semana.
     Alex: Mamá tan cariñosa como siempre. Aunque ahora toca menos el piano y eso me preocupa.
     Alex: Recuerdo cuando era pequeño y tocaba para mí. Me relajaba los días que me hacía pis en la cama.
-    Alex: (Dios, esto es demasiado personal)
+    Alex: Dios, esto es demasiado personal #thought
     Alex: En fin...
     ~Need = "caucho"
     ~Count += 1
