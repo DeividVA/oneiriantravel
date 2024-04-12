@@ -540,7 +540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.046997, y: 3.743988}
+  m_AnchoredPosition: {x: 10.046997, y: 3.7440186}
   m_SizeDelta: {x: -1490.209, y: -369.167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1761527400
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f572b0e27449a043be273523ef3f592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inkJsonAsset: {fileID: 4900000, guid: 48d1c930e237a5f4f90b9fd7523e3605, type: 3}
+  _inkJsonAsset: {fileID: 4900000, guid: 01cef76ec6dfc2f4f8156584962959ad, type: 3}
   _textField: {fileID: 1845998555}
   _choiceButtonContainer: {fileID: 1428558621}
   _choiceButtonPrefab: {fileID: 1954023876901190946, guid: 0f8cf39b85da3834da65c62ce7deef91, type: 3}

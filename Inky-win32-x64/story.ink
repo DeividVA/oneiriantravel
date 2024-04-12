@@ -65,7 +65,7 @@ Alex: Dios, maldito gato, voy a tener que correr.
 (Sales corriendo, el gato te persigue)
 Alex: ¿Pero se puede saber qué quieres?
 Gato: Miau.
-(El gato se mete por una callejuela y se vuelve a mirarte).
+(El gato señala con la cabeza una callejuela y se vuelve a mirarte).
 Alex: Al final voy a llegar tarde. ¿Qué narices quieres ahí dentro?
 (Llegas al final de la callejuela)
 Alex: Esto... esto es... el Barrio del Muro...
@@ -80,7 +80,8 @@ Alex: Un momento... Este reloj...
 Alex: Este reloj es igual que el que tenía de pequeño, el que me regalaron mis amigos en mi cumpleaños.
 Alex: Dios, debía tener diez años o menos.
 Alex: Parece que este ha perdido la correa.
-Alex: Siento la tentación de acercarme y cogerlo. Pero tal como está la ciudad hoy en día, quién sabe lo que pueden haber echado ahí. Fentanilo o algo peor.
+Alex: Siento la tentación de acercarme y cogerlo. Pero tal como está la ciudad hoy en día, quién sabe lo que pueden haber echado ahí. 
+Alex: Fentanilo o algo peor.
 
 -> clockchoice_knot
 
@@ -102,6 +103,7 @@ Alex: Siento la tentación de acercarme y cogerlo. Pero tal como está la ciudad
      ~DeltaWaves += 1
      Alex: Era justo este modelo. Es increíble. Qué recuerdos. Recuerdo la esfera redondeada y estas manecillas con el pingüino y la morsa...
      Alex: Tengo que llevármelo. Ya veré después qué hago con él.
+     Has obtenido reloj viejo.
      (Lo guardas en el bolsillo de la chaqueta)
     -> continue
     
@@ -119,8 +121,9 @@ PUERTO VIEJO, BARRIO DEL MURO
 Este es el nivel de sueño sleep N1: Adormecimiento
 
 (Te empiezas a despertar lentamente, la pantalla pasa de estar borrosa a nítida)
+
 Alex: Uf...
-Alex: Uf...
+Alex: Uuf...
 Alex: ¿Qué... qué... me ha pasado?
 Alex: ¿Debería ir al médico? No, no puedo... Creo que estoy bien.
 Alex: Y la reunión es demasiado importante para mi reputación.
@@ -136,12 +139,11 @@ Alex: ¿Eh? Ho... hola. ¿Quién eres?
 
 Alex: ¿Cheese?
 
-
 -> cheese_choice
 
     === cheese_choice ===
 
-    * La verdad es que no caigo ahora mismo. Refréscame la memoria.
+    * La verdad es que no caigo. Refréscame la memoria.
     -> dunno
     * ¿Qué clase de nombre es ese?
     -> what
@@ -162,18 +164,20 @@ Alex: ¿Cheese?
     -> continue2
 
 === continue2 ===
-Alex: Disculpa es que creo que no te conozco. Aunque tengo la sensación de que te he visto antes en alguna parte.
-Cheese: Hmm... más bien la cuestión es que no me recuerdas, pero no te diste cuenta todavía. Pero date tiempo, amigo. Aunque creo que tiempo es lo que te falta ahora mismo. ¿No se te quita de la cabeza esa reunión de negocios, verdad?
-Alex: (¿Cómo puede este tipo saber toda mi vida?)
+Alex: Disculpa, es que creo que no te conozco. Aunque tengo la sensación de que te he visto antes en alguna parte.
+Cheese: Hmm... más bien la cuestión es que no me recuerdas, pero no te diste cuenta todavía. Pero date tiempo, amigo. 
+Cheese: Aunque creo que tiempo es lo que te falta ahora mismo. ¿No se te quita de la cabeza esa reunión de negocios, verdad?
+Alex: ¿Cómo puede esta persona saber toda mi vida? #thought
 Cheese: Ja, ja, tranquilo... Dejemos al tiempo que sea quien me descubra.
-Alex: (Qué forma de hablar más extraña. Pero no sé por qué, de algún modo parece que me es familiar. ¿Será alguien del colegio, de cuándo era pequeño?)
+Alex: Qué forma de hablar más extraña. Pero no sé por qué, de algún modo parece que me es familiar.  #thought 
+Alex: ¿Será alguien del colegio, de cuándo era pequeño? #thought
 Alex: ...
 Cheese: Y cuéntame, ¿qué tal todo?
 Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero Isaac?
 -> interest_choice
 
     === interest_choice ===
-    Alex: (No sé quién es este tipo y por qué sabe tanto de mí, pero una fuerza extraña me incita a hablar)
+    Alex: (No sé quién es esta persona y por qué sabe tanto de mí, pero una fuerza extraña me incita a hablar)
     * Hablar sobre mis amigos.
     -> friends
     * Hablar sobre mis compañeros de trabajo.
@@ -183,9 +187,10 @@ Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero I
 
     === friends ===
     Alex: Pues, eh, bien. Jorge se marcha ahora a Suecia. Va a pasar frío allí... je, je.
-    Alex: (¿Pero qué estoy diciendo?)
-    Alex: En realidad, hace tiempo que no los veo. Pero es que la agenda está demasiado apretada. Y desde lo que pasó la última vez. La época en que ellos dos estaban enrollados... Entre eso y mi trabajo nos distanciamos bastante. Y aquella maldita pelea. No quiero ni acordarme... Y ojalá hubiera sido más sincero con Elena.
-    Alex: (¿Pero por qué hablo de esto con un desconocido?)
+    Alex: ¿Pero qué estoy diciendo?  #thought
+    Alex: En realidad, hace tiempo que no los veo. Pero es que la agenda está demasiado apretada. Y desde lo que pasó la última vez. La época en que ellos dos estaban juntos... 
+    Alex: Entre eso y mi trabajo nos distanciamos bastante. Y aquella maldita pelea. No quiero ni acordarme... Y ojalá hubiera sido más sincero con Elena.
+    Alex: ¿Pero por qué hablo de esto con un desconocido? #thought
     Alex: En fin...
         ~Need = "cuero"
     ~Count += 1
@@ -197,11 +202,11 @@ Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero I
 
     === pals ===
     Alex: Pues, eh, bien. La verdad es que es un tipo muy competente. Desde que entró la productividad de la empresa subió un 170%.
-    Alex: (¿Qué haces? ¡Eso es confidencial!)
+    Alex: ¿Qué haces? ¡Eso es confidencial! #thought
     Alex: Hicieron bien en contratarle, porque yo estaba desbordado. Pero lo cierto es que empecé a sentir envidia. Además es un tanto arrogante.
     Alex: Solo que luego me empezó a contar de sus problemas, y empezamos a caernos bien. Teníamos más cosas en común de lo que pensábamos.
     Alex: Incluso es de los Sharks como yo.
-    Alex: (¿Pero por qué le cuento esto?)
+    Alex: ¿Pero por qué le cuento esto? #thought
     Alex: En fin...
     ~Need = "metal"
     ~Count += 1
@@ -219,7 +224,7 @@ Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero I
     Alex: Recuerdo cuando era pequeño y tocaba para mí. Me relajaba los días que me hacía pis en la cama.
     Alex: Dios, esto es demasiado personal #thought
     Alex: En fin...
-    ~Need = "caucho"
+    ~Need = "goma"
     ~Count += 1
     {Count:
        -3: -> endconver
@@ -235,16 +240,18 @@ Cheese: ¿Tus padres? ¿Tus amigos Elena y Jorge? ¿Tu trabajo y tu compañero I
 Tienes {DeltaWaves} ondas delta
 
 Alex: Aggh... me ha vuelto el dolor de cabeza.
-Cheese: Está bien. No te apures, déjalo estar. Se te nota en la cara que no lo estás pasando bien con las prisas. Y después de estar un rato inconsciente.
+Cheese: Está bien. No te apures, déjalo estar. Se te nota en la cara que no lo estás pasando bien con las prisas. 
+Cheese: Y después de estar un rato inconsciente.
 Alex: ¿Qué? ¿He estado inconsciente? ¿Y cómo lo sabes?
 Cheese: Bueno te veré dentro, amigo.
 Espera...
 Cheese: Una última cosa: cuida bien lo que guardas en el bolsillo de tu chaqueta... ja, ja, ja...
  {not takeclock:
- Hmmm... ¿Qué es esto?
- ¿Por qué tengo el reloj en el bolsillo?
+ Hmmm... ¿Qué es esto? #thought
+ ¿Por qué tengo el reloj en el bolsillo? #thought
  }
-¿Qué? ¿Por qué ahora tiene una correa de {Need}? 
+¿Qué? ¿Por qué ahora tiene una correa de {Need}?
+Has obtenido reloj infantil con correa de {Need}
 Cheese: Ciaooo...
 Cheese: Vaya, qué oscuro está aquí dentro...
 (Cheese desaparece en la oscuridad del restaurante. La puerta se cierra).
@@ -280,7 +287,7 @@ Alex: Eeeh, eehh, ¿me está hablando a mí?
 
     === oneirian_question ===
 
-    Alex: (Pero qué son estas criaturas. Improvisa algo. ¡Rápido!)
+    Alex: Pero qué son estas criaturas. Improvisa algo. ¡Rápido!  #thought
 
     * (...) (Quedarse callado)
     -> silence
@@ -336,21 +343,21 @@ Alex: ¿Qué???
 
 ???: Alex, no has probado tu vino. ¿O es que prefieres otra cosa? ¿Un refresco, quizás?
 Alex: No, señora Cruz.
-Alex: (¿Qué? ¿Por qué la he llamado como mi jefa?)
+Alex: ¿Qué? ¿Por qué la he llamado como mi jefa?  #thought
 Sra. Cruz: Bien, se te ve pálido. Prúebalo, entrarás en calor. Mira a Juan, ya se ha tomado unas cuantas.
 Sr. Florián: Solo han sido dos... y media.
 Sra. Cruz: Ja, ja, ja...
 Sra. Cruz: Añade a eso la copa de burbrujilda que te tomaste antes de que yo llegara.
-Alex: (¿Burbu qué? Esto cada vez es más raro...)
-Alex: (¿Realmente esto es mi cena de empresa? ¿Dónde están mis compañeros?)
+Alex: ¿Burbu qué? Esto cada vez es más raro...  #thought
+Alex: ¿Realmente esto es mi cena de empresa? ¿Dónde están mis compañeros? #thought
 Sra. Cruz: Oh, pero deja que te presente al señor Oddstrong.
 Oddstrong: ...
 Alex: En... encantado...
 Oddstrong: Grunt...
-Oddstrong: Grunt...
-Oddstrong: Grunt...
-Alex: (¿Pero por qué no habla este tipo?) 
-Alex: (Esa cabeza me da escalofríos)
+Oddstrong: Gruunt...
+Oddstrong: Gruuunt...
+Alex: ¿Pero por qué no habla este tipo?  #thought 
+Alex: Esa cabeza me da escalofríos  #thought
 Sra. Cruz: Ja, ja, ja... usted siempre tan ingenioso, señor Oddstrong.
 Sra. Cruz: ¿Verdad que es divertido, Alex?
 
@@ -374,20 +381,21 @@ Sra. Cruz: ¿Verdad que es divertido, Alex?
 === continue5 ===
 Tienes {DeltaWaves} ondas delta.
 Sra. Cruz: Sé que no es fácil pillarle el humor al señor Oddstrong, pero ya le irás entendiendo
-Claro. Es un honor tenerle aquí señor Oddstrong.
-(Pero, ¿por qué he dicho eso?)
-(Es como si mi boca hablara sola)
-(¿Acaso me estoy empezando a sentir tranquilo entre estos seres?)
-Oddstrong: ...
+Alex: Claro. Es un honor tenerle aquí señor Oddstrong.
+Alex: Pero, ¿por qué he dicho eso?  #thought
+Alex: Es como si mi boca hablara sola  #thought
+Alex: ¿Acaso me estoy empezando a sentir tranquilo entre estos seres? #thought
+Oddstrong: Gruuunt...
 Sr. Florián: Ja, ja, cierto. Usted siempre tan al grano, señor Oddstrong. Se le nota la vena nuevaportina.
 Sra. Cruz: New Porter, Juan, no seas palurdo. Ya conoce sus modales puertovejeros, señor Oddstrong.
 Sra. Cruz: Pero bueno, Alex, te ha comido la lengua el gato. Estamos esperando tus informes. El señor Oddstrong está muy interesado en participar en nuestra empresa.
 Oddstrong: Grunt...
 Alex: Sí. Enseguida.
-Alex: (He vuelto a hacerlo. Siento como si estuviera viendo una película)
-Alex: (Abres tu maletín, pero solo hay dibujos infantiles que hiciste de niño)
+Alex: He vuelto a hacerlo. 
+Alex: Siento como si en vez de vivir, estuviera viendo una película. 
+(Abres tu maletín, pero solo hay dibujos infantiles que hiciste de niño)
 Alex: ¿Qué? ¿De dónde sale esto?
-Alex: (Vaya, parece que el piloto automático ha parado. Tengo que hacer algo)
+Alex: Vaya, parece que el piloto automático ha parado. Tengo que hacer algo #thought
 -> papers
 
     === papers ===
@@ -400,15 +408,18 @@ Alex: (Vaya, parece que el piloto automático ha parado. Tengo que hacer algo)
     
     === act_normally ===
     ~DeltaWaves += 0
-    Alex: Como puede ver en esta gráfica, hemos incrementado un 170% nuestra productividad en los últimos seis meses, lo que es un claro indicio de la proyección al alza de nuestra empresa.
+    Alex: Como puede ver en esta gráfica, hemos incrementado un 170% nuestra productividad en los últimos seis meses, 
+    Alex: lo que es un claro indicio de la proyección al alza de nuestra empresa.
     -> continue6
     === drawings ===
     ~DeltaWaves += 1
-    Alex: En este dibujo de aquí estoy con mis amigos Elena y Jorge jugando a la pelota en el barrio del muro. Y aquí salgo en clase de niño tirando bolas de papel. La profesora nos riñó mucho aquel día.
+    Alex: En este dibujo de aquí estoy con mis amigos Elena y Jorge jugando a la pelota en el barrio del muro. 
+    Alex: Y aquí salgo en clase de niño tirando bolas de papel. La profesora nos riñó mucho aquel día.
     -> continue6
     === excuse ===
     ~DeltaWaves += 0
-    Alex: No, no puedo creerlo. ¿Dónde? ¿Dónde están los informes?
+    Alex: No, no puedo creerlo. 
+    Alex: ¿Dónde? ¿Dónde están los informes?
     -> continue6
     
     
@@ -424,7 +435,8 @@ Has acabado la demo con {DeltaWaves} ondas delta.
 Vas encaminado hacia los finales { DeltaWaves <= 6: Beta y Gamma} { DeltaWaves >  6: Alfa y Theta}
 
 En la versión final Alex llegará a la playa onírica, el paraíso soñado donde podrá ver gigantescas criaturas del mundo de los sueños. 
-Sorprendentemente se encontrará allí con su amiga Elena, su compañero Isaac y sus padres, que le conducirán en un extraño viaje por Oniria, mientras desentraña sus dilemas y miedos personales y finalmente se enfrenta al terrible peligro que amenaza este mundo.
+Sorprendentemente se encontrará allí con su amiga Elena, su compañero Isaac y sus padres, que le conducirán en un extraño viaje por Oniria, 
+mientras desentraña sus dilemas y miedos personales y finalmente se enfrenta al terrible peligro que amenaza este mundo.
     
 /*
 -> sleepN3_knot
