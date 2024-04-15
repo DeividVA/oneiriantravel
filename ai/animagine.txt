@@ -1,0 +1,25 @@
+seed: 74182331
+1344*768
+Photographic
+background, streets of a small european town, old-looking, run-down and dirty
+characters
+Use upscaler
+https://huggingface.co/spaces/Linaqruf/animagine-xl
+
+
+Chat GPT
+
+"Generate an anime-style background image for a visual novel video game depicting the exterior of a restaurant in a fictional European city called Old Port. The scene should show the entrance and storefront from the street, capturing the aged, dirty, somewhat seedy and musty atmosphere of the city's historic district. Thank you." 
+
+"Create an anime-style background image for a visual novel video game set in a fictional city center neighborhood called Wall District. The scene should feature an old and dirty square with small houses surrounding it, including an open trash can. Capture the antiquated and grimy atmosphere of the area. Thank you."
+
+Create a full-body image of an androgynous character named Cheese for an anime-style visual novel, with either a plain background or no background. The character should appear young and attractive, with an ambiguous gender presentation that makes it difficult to discern if they are male or female. They should have white hair and a small scar over one eye. The character's expression should be confident and cheerful, with a touch of humor, yet they should also exude a mysterious aura. They should be dressed in a modern, stylish outfit that complements their ambiguous and enigmatic look. Ensure that the image captures the full stature and details of the outfit.
+
+"Create an image of a dream-like creature for an anime-style visual novel, with no background to emphasize the character. This creature should have the head of an Ibis, symbolizing surrealism, and communicate through grunts and silent gestures. The body should be humanoid, dressed in a simple, sleek modern business suit, which suggests a high-ranking corporate executive role but without elaborate details. The attire should be minimalistic, with clean lines and a professional appearance. The character’s demeanor should be confident and enigmatic, conveying authority and a subtle sense of intimidation. The overall look should be striking yet uncomplicated, making it both accessible and profoundly impactful in a dream-like setting."
+
+"Create an image of a dream-like creature for an anime-style visual novel, with no background to focus solely on the character. This character should have the head of an Ibis and speak through grunts and silent gestures. The body should be humanoid and clad in a purely fantastical priest's attire, without any traditional Egyptian elements. The outfit should be intricate and otherworldly, conveying a sense of ancient wisdom and mystical power. The character's posture should be both mysterious and intimidating, inspiring fear and awe. The overall appearance should be powerful and unsettling, emphasizing the creature's otherworldly origins and fearsome presence."
+
+https://perchance.org/ai-anime-generator Cinematic style
+
+Quita fondos
+https://removal.ai/es//upload
