@@ -32,16 +32,31 @@ public class InkManager : MonoBehaviour
     [SerializeField]
     private Color _thoughtTextColor;
 
+    private CharacterManager _characterManager;
+
     // Start is called before the first frame update
     void Start()
     {
         StartStory();
+        _characterManager = FindObjectOfType<CharacterManager>();
+
     }
 
     private void StartStory()
     {
         _story = new Story(_inkJsonAsset.text);
+
+        _story.BindExternalFunction("ShowCharacter", (string name, string position, string mood)
+          => _characterManager.ShowCharacter(name, position, mood));
+
+        _story.BindExternalFunction("HideCharacter", (string name)
+          => _characterManager.HideCharacter(name));
+
+        _story.BindExternalFunction("ChangeMood", (string name, string mood)
+          => _characterManager.ChangeMood(name, mood));
+
         DisplayNextLine();
+
     }
 
 
