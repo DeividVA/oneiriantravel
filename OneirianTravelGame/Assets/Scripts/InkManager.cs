@@ -34,11 +34,14 @@ public class InkManager : MonoBehaviour
 
     private CharacterManager _characterManager;
 
+    private BackgroundManager _backgroundManager;
+
     // Start is called before the first frame update
     void Start()
     {
         StartStory();
         _characterManager = FindObjectOfType<CharacterManager>();
+        _backgroundManager = FindObjectOfType<BackgroundManager>();
 
     }
 
@@ -54,6 +57,12 @@ public class InkManager : MonoBehaviour
 
         _story.BindExternalFunction("ChangeMood", (string name, string mood)
           => _characterManager.ChangeMood(name, mood));
+
+        _story.BindExternalFunction("ShowBackground", (string name)
+          => _backgroundManager.ShowBackground(name));
+
+        _story.BindExternalFunction("HideBackground", ()
+          => _backgroundManager.HideBackground());
 
         DisplayNextLine();
 

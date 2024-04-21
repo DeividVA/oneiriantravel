@@ -426,11 +426,13 @@
 "Assets/Scripts/Background.cs"
 "Assets/Scripts/BackgroundEnums.cs"
 "Assets/Scripts/BackgroundManager.cs"
+"Assets/Scripts/BackgroundSprite.cs"
 "Assets/Scripts/Character.cs"
 "Assets/Scripts/CharacterEnums.cs"
 "Assets/Scripts/CharacterManager.cs"
 "Assets/Scripts/CharacterMood.cs"
 "Assets/Scripts/InkManager.cs"
+"Assets/Scripts/ItemManager.cs"
 "Assets/Scripts/NextButtonScript.cs"
 -langversion:9.0
 
