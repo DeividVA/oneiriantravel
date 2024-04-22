@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Background
   - Item
+  - Chapter
+  - Title
+  - ImageCT
   layers:
   - Default
   - TransparentFX

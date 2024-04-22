@@ -49,10 +49,13 @@ public class BackgroundManager : MonoBehaviour
     {
 
         var backgroundObject = Instantiate(_backgroundPrefab, gameObject.transform, false);
+        
         var backgroundImage = backgroundObject.GetComponent<Image>();
 
         //backgroundImage.sprite = Resources.Load<Sprite>($"Backgrounds/{name}");
         backgroundImage.sprite = GetSpriteForBackground(name);
+
+        LeanTween.alpha(backgroundObject, 1f, 1f).setDelay(500000f);
     }
 
     //public void HideBackground(string name)

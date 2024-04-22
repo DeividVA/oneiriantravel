@@ -39,6 +39,11 @@ public class ItemManager : MonoBehaviour
     [SerializeField]
     private Sprite _beachDrawingSprite;
 
+    private GameObject itemObject;
+    private Image itemImage;
+    private CanvasGroup itemCanvas; 
+
+
     public void ShowItem(string name)
     {
         if (!Enum.TryParse(name, out ItemName nameEnum))
@@ -53,16 +58,26 @@ public class ItemManager : MonoBehaviour
     public void ShowItem(ItemName name)
     {
 
-        var itemObject = Instantiate(_itemPrefab, gameObject.transform, false);
-        var itemImage = itemObject.GetComponent<Image>();
+        itemObject = Instantiate(_itemPrefab, gameObject.transform, false);
+        itemImage = itemObject.GetComponent<Image>();
+        itemCanvas = itemObject.GetComponent<CanvasGroup>();
+        //itemImage.color = new Color (255,255,255,0);
 
         itemImage.sprite = GetSpriteForItem(name);
+
+        LeanTween.alphaCanvas(itemCanvas, 1f, 1f);
+
+        //LeanTween.alpha(itemObject, 1f, 1f).setDelay(5f);
     }
 
     public void HideItem()
     {
         var showingItem = GameObject.FindGameObjectWithTag("Item");
-        Destroy(showingItem);
+        itemCanvas = itemObject.GetComponent<CanvasGroup>();
+
+        LeanTween.alphaCanvas(itemCanvas, 0f, 1f);
+
+        Destroy(showingItem, 5f);
 
     }
 

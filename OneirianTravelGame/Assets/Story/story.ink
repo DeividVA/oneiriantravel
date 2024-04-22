@@ -10,6 +10,18 @@ EXTERNAL ShowBackground(backgroundName)
 
 EXTERNAL HideBackground()
 
+EXTERNAL ShowItem(itemName)
+
+EXTERNAL HideItem()
+
+EXTERNAL ShowHud()
+
+EXTERNAL HideHud()
+
+EXTERNAL ShowCT()
+
+EXTERNAL HideCT()
+
 // Global variables
 VAR DeltaWaves = 5
 VAR Need = ""
@@ -21,21 +33,27 @@ VAR Count = 0
 ONEIRIAN TRAVEL Demo Version
 
 
-0- AUSENCIA DE LUZ
-LUGAR DESCONOCIDO
-???: Alex... Alex... ¡Ayuda, Alex! Las... mane... cillas... 
-???: la es... fera...
+LUZ AUSENTE, LUGAR DESCONOCIDO
+???: Alex... Alex... 
+???: ¡Ayuda, Alex! 
+???: Las... mane... cillas... 
+???: La es... fera...
 
 -> wakefulness_knot
 
 === wakefulness_knot ===
 
-I- VIGILIA
-PUERTO VIEJO, CALLES {ShowBackground("Streets")}
+//Capítulo I: VIGILIA
+{ShowCT()}
+...
+{HideCT()}
+
+PUERTO VIEJO, CALLES {ShowBackground("Streets")} {ShowHud()}
 Alex: Otro día más en Puerto Viejo. {ShowCharacter("Alex", "Left", "Iddle")}
 Alex: Otra Navidad más en Puerto Viejo. {ChangeMood("Alex", "Depressed")}
 Alex: Estoy cansado de esta ciudad.
-Alex: Para colmo se me ha vuelto a estropear el coche.
+Alex: Para colmo se me ha vuelto a estropear el coche. {ShowItem("OldClock")} 
+{HideItem()}
 Alex: Y tengo que ir andando a la cena de Navidad de la empresa.
 Alex: Justo hoy, que hablaremos de los planes de importación del año que viene. Y estaba invitado el pez gordo aquel de New Port.
 Alex: Es importante que esté presente. Me juego el ascenso. {HideBackground()} {ShowBackground("Alley")}
@@ -128,7 +146,9 @@ Alex: Fentanilo o algo peor.
     -> sleepN1_knot
 
 === sleepN1_knot ===
-SUEÑO N1 (NUMBNESS)
+{ShowCT()}
+...
+{HideCT()}
 PUERTO VIEJO, BARRIO DEL MURO
 Este es el nivel de sueño sleep N1: Adormecimiento
 
@@ -279,6 +299,7 @@ Alex: ¿Pero qué?
 
 
 === sleepN2_knot ===
+
 SUEÑO N2 (LIGHT SLEEP)
 MUNDO ONÍRICO, TEMPLO
 Este es el nivel de sueño sleep N2: Sueño Ligero

@@ -38,13 +38,42 @@ public class InkManager : MonoBehaviour
 
     private ItemManager _itemManager;
 
+    private HudManager _hudManager;
+
+    private int _deltaWaves;
+
+    [SerializeField]
+    private TextMeshProUGUI _deltaPointsText;
+
+    private CTManager _ctManager;
+
+
+    public int DeltaWaves
+    {
+        get => _deltaWaves;
+        private set
+        {
+            Debug.Log($"Updating Delta Waves value. Old value: {_deltaWaves}, new value: {value}");
+            _deltaWaves = value;
+            _deltaPointsText.text = DeltaWaves.ToString();
+        }
+    }
+
+    public static InkManager Instance;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartStory();
         _characterManager = FindObjectOfType<CharacterManager>();
         _backgroundManager = FindObjectOfType<BackgroundManager>();
         _itemManager = FindObjectOfType<ItemManager>();
+        _hudManager = FindObjectOfType<HudManager>();
+        _ctManager = FindObjectOfType<CTManager>();
+
+        StartStory();
+
+        InitializeVariables();
+
     }
 
     private void StartStory()
@@ -72,10 +101,38 @@ public class InkManager : MonoBehaviour
         _story.BindExternalFunction("HideItem", ()
           => _itemManager.HideItem());
 
+        _story.BindExternalFunction("ShowHud", ()
+          => _hudManager.ShowHud());
+
+        _story.BindExternalFunction("HideHud", ()
+          => _hudManager.HideHud());
+
+        _story.BindExternalFunction("ShowCT", ()
+          => _ctManager.ShowCT());
+
+        _story.BindExternalFunction("HideCT", ()
+          => _ctManager.HideCT());
+
         DisplayNextLine();
 
     }
 
+
+    private void InitializeVariables()
+    {
+        DeltaWaves = (int)_story.variablesState["DeltaWaves"];
+
+        _story.ObserveVariable("DeltaWaves", (arg, value) =>
+        {
+            DeltaWaves = (int)value;
+            _deltaPointsText.text = DeltaWaves.ToString();
+        });
+    }
+
+    public int ShowVariablesValue() 
+    {
+        return DeltaWaves;
+    }
 
     public void DisplayNextLine()
     {
