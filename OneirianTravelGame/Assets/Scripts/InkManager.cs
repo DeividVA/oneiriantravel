@@ -36,13 +36,15 @@ public class InkManager : MonoBehaviour
 
     private BackgroundManager _backgroundManager;
 
+    private ItemManager _itemManager;
+
     // Start is called before the first frame update
     void Start()
     {
         StartStory();
         _characterManager = FindObjectOfType<CharacterManager>();
         _backgroundManager = FindObjectOfType<BackgroundManager>();
-
+        _itemManager = FindObjectOfType<ItemManager>();
     }
 
     private void StartStory()
@@ -63,6 +65,12 @@ public class InkManager : MonoBehaviour
 
         _story.BindExternalFunction("HideBackground", ()
           => _backgroundManager.HideBackground());
+
+        _story.BindExternalFunction("ShowItem", (string name)
+          => _itemManager.ShowItem(name));
+
+        _story.BindExternalFunction("HideItem", ()
+          => _itemManager.HideItem());
 
         DisplayNextLine();
 

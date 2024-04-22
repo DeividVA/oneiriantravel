@@ -362,6 +362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 709277177}
+  - component: {fileID: 709277178}
   m_Layer: 5
   m_Name: Items
   m_TagString: Untagged
@@ -388,6 +389,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &709277178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709277176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451d57a267594b64daf991b4c78d2fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemPrefab: {fileID: 6699898440445541982, guid: 98a3eb725a15dbb4584d49d5e18c7937, type: 3}
+  _oldClockSprite: {fileID: 21300000, guid: 468e8a49834b9284485c97dee94866e7, type: 3}
+  _dogClockSprite: {fileID: 21300000, guid: 7349b5b9a41c0fb488ddb9f50002bc99, type: 3}
+  _catClockSprite: {fileID: 21300000, guid: dfd8b0222d351504084519cae1cb10d5, type: 3}
+  _mouseClockSprite: {fileID: 21300000, guid: cee795c3dc32b4b438fefcc0a2782e2d, type: 3}
+  _dictionarySprite: {fileID: 21300000, guid: 74efa6d21ea77eb4da73c87e443f75fe, type: 3}
+  _allDrawingsSprite: {fileID: 21300000, guid: 9006a9875ea6f81468ae61779207c06b, type: 3}
+  _classDrawingSprite: {fileID: 21300000, guid: 0dcca4cb37d2ada468088c01f8029a15, type: 3}
+  _ballDrawingSprite: {fileID: 21300000, guid: 74a891ece3ac56547ac67396962cb83d, type: 3}
+  _beachDrawingSprite: {fileID: 21300000, guid: 742d115e22d73764bb8fa0edcd3735d9, type: 3}
 --- !u!1 &836697318
 GameObject:
   m_ObjectHideFlags: 0

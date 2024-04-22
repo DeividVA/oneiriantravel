@@ -432,6 +432,7 @@
 "Assets/Scripts/CharacterManager.cs"
 "Assets/Scripts/CharacterMood.cs"
 "Assets/Scripts/InkManager.cs"
+"Assets/Scripts/ItemEnums.cs"
 "Assets/Scripts/ItemManager.cs"
 "Assets/Scripts/NextButtonScript.cs"
 -langversion:9.0
