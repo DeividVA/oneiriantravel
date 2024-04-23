@@ -8,7 +8,7 @@ EXTERNAL ChangeMood(characterName, mood)
 
 EXTERNAL ShowBackground(backgroundName)
 
-EXTERNAL HideBackground()
+EXTERNAL HideBackground(backgroundName)
 
 EXTERNAL ShowItem(itemName)
 
@@ -30,9 +30,8 @@ VAR Count = 0
 -> start_knot
 
 === start_knot ===
-ONEIRIAN TRAVEL Demo Version
-
-
+//ONEIRIAN TRAVEL Demo Version
+{ShowBackground("Prelude")}
 LUZ AUSENTE, LUGAR DESCONOCIDO
 ???: Alex... Alex... 
 ???: ¡Ayuda, Alex! 
@@ -42,21 +41,21 @@ LUZ AUSENTE, LUGAR DESCONOCIDO
 -> wakefulness_knot
 
 === wakefulness_knot ===
-
+{HideBackground("Prelude")}
 //Capítulo I: VIGILIA
 {ShowCT()}
 ...
 {HideCT()}
 
-PUERTO VIEJO, CALLES {ShowBackground("Streets")} {ShowHud()}
+PUERTO VIEJO, CALLES {ShowBackground("Streets")} 
 Alex: Otro día más en Puerto Viejo. {ShowCharacter("Alex", "Left", "Iddle")}
 Alex: Otra Navidad más en Puerto Viejo. {ChangeMood("Alex", "Depressed")}
-Alex: Estoy cansado de esta ciudad.
+Alex: Estoy cansado de esta ciudad. {ShowHud()}
 Alex: Para colmo se me ha vuelto a estropear el coche. {ShowItem("OldClock")} 
 {HideItem()}
 Alex: Y tengo que ir andando a la cena de Navidad de la empresa.
 Alex: Justo hoy, que hablaremos de los planes de importación del año que viene. Y estaba invitado el pez gordo aquel de New Port.
-Alex: Es importante que esté presente. Me juego el ascenso. {HideBackground()} {ShowBackground("Alley")}
+Alex: Es importante que esté presente. Me juego el ascenso. {HideBackground("Streets")} {ShowBackground("Alley")}
 Alex: Aggh... este dolor de cabeza...
 Alex: ...
 Alex: Ummm... ¿Y ese gato? {ShowCharacter("Cat", "Right", "Iddle")}

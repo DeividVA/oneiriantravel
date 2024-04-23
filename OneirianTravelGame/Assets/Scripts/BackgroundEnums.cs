@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
-    public enum BackgroundName { Streets, Alley, District, Restaurant, Temple, Shrine };
+    public enum BackgroundName { Streets, Alley, District, Restaurant, Temple, Shrine, Prelude, Epilogue };
 
 }

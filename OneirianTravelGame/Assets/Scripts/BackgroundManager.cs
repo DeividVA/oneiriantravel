@@ -34,6 +34,20 @@ public class BackgroundManager : MonoBehaviour
     [SerializeField]
     private Sprite _shrineSprite;
 
+    [SerializeField]
+    private Sprite _preludeSprite;
+
+    [SerializeField]
+    private Sprite _epilogueSprite;
+
+    private CanvasGroup bgCanvas;
+
+    [SerializeField]
+    private float _fadeInTime = 1f;
+
+    [SerializeField]
+    private float _fadeOutTime = 1f;
+
     public void ShowBackground(string name)
     {
         if (!Enum.TryParse(name, out BackgroundName nameEnum))
@@ -52,27 +66,34 @@ public class BackgroundManager : MonoBehaviour
         
         var backgroundImage = backgroundObject.GetComponent<Image>();
 
+        bgCanvas = backgroundObject.GetComponent<CanvasGroup>();
+
         //backgroundImage.sprite = Resources.Load<Sprite>($"Backgrounds/{name}");
         backgroundImage.sprite = GetSpriteForBackground(name);
 
-        LeanTween.alpha(backgroundObject, 1f, 1f).setDelay(500000f);
+        LeanTween.alphaCanvas(bgCanvas, 1f, _fadeInTime);
     }
 
-    //public void HideBackground(string name)
-    //{
-    //    if (!Enum.TryParse(name, out BackgroundName nameEnum))
-    //    {
-    //        Debug.LogWarning($"Failed to parse background name to enum: {name}");
-    //        return;
-    //    }
+    public void HideBackground(string name)
+    {
+        if (!Enum.TryParse(name, out BackgroundName nameEnum))
+        {
+            Debug.LogWarning($"Failed to parse background name to enum: {name}");
+            return;
+        }
 
-    //    HideBackground(nameEnum);
-    //}
+        HideBackground(nameEnum);
+    }
 
-    public void HideBackground()
+    public void HideBackground(BackgroundName name)
     {
         var actualBackground = GameObject.FindGameObjectWithTag("Background");
-        Destroy(actualBackground);
+
+        bgCanvas = actualBackground.GetComponent<CanvasGroup>();
+
+        LeanTween.alphaCanvas(bgCanvas, 0f, _fadeOutTime);
+
+        Destroy(actualBackground, 2f);
         
         //var backgroundImage = actualBackground.GetComponent<Image>();
 
@@ -96,6 +117,10 @@ public class BackgroundManager : MonoBehaviour
                 return _templeSprite;
             case BackgroundName.Shrine:
                 return _shrineSprite;
+            case BackgroundName.Prelude:
+                return _preludeSprite;
+            case BackgroundName.Epilogue:
+                return _epilogueSprite;
             default:
                 Debug.LogError($"Could not find sprite for {name}");
                 return null;

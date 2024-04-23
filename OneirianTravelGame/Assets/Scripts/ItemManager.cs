@@ -41,7 +41,13 @@ public class ItemManager : MonoBehaviour
 
     private GameObject itemObject;
     private Image itemImage;
-    private CanvasGroup itemCanvas; 
+    private CanvasGroup itemCanvas;
+
+    [SerializeField]
+    private float _fadeInTime = 1f;
+
+    [SerializeField]
+    private float _fadeOutTime = 1f;
 
 
     public void ShowItem(string name)
@@ -65,7 +71,7 @@ public class ItemManager : MonoBehaviour
 
         itemImage.sprite = GetSpriteForItem(name);
 
-        LeanTween.alphaCanvas(itemCanvas, 1f, 1f);
+        LeanTween.alphaCanvas(itemCanvas, 1f, _fadeInTime);
 
         //LeanTween.alpha(itemObject, 1f, 1f).setDelay(5f);
     }
@@ -75,7 +81,7 @@ public class ItemManager : MonoBehaviour
         var showingItem = GameObject.FindGameObjectWithTag("Item");
         itemCanvas = itemObject.GetComponent<CanvasGroup>();
 
-        LeanTween.alphaCanvas(itemCanvas, 0f, 1f);
+        LeanTween.alphaCanvas(itemCanvas, 0f, _fadeOutTime);
 
         Destroy(showingItem, 5f);
 

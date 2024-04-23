@@ -21,7 +21,17 @@ public class CTManager : MonoBehaviour
     [SerializeField]
     private GameObject _imageCT;
 
-    public bool _blockedNext;
+    //public bool _blockedNext;
+
+    [SerializeField]
+    private float _fadeInTime = 1f;
+
+    [SerializeField]
+    private float _fadeOutTime = 1f;
+
+    [SerializeField]
+    private float _fadeInText = 1f;
+
 
     public void ShowCT()
     {
@@ -29,10 +39,10 @@ public class CTManager : MonoBehaviour
         //var _imageCT = GameObject.FindGameObjectWithTag("ImageCT");
         _imageCT.SetActive(true);
         _canvasGroup = GetComponent<CanvasGroup>();
-        LeanTween.alphaCanvas(_canvasGroup, 1f, 0.5f);
+        LeanTween.alphaCanvas(_canvasGroup, 1f, _fadeInTime);
 
         ShowText(_currentChapter, _titleList[_currentChapter-1]);
-        _blockedNext = true;
+        //_blockedNext = true;
     }
 
     public void HideCT()
@@ -40,7 +50,7 @@ public class CTManager : MonoBehaviour
 
 
         _canvasGroup = GetComponent<CanvasGroup>();
-        LeanTween.alphaCanvas(_canvasGroup, 0f, 1f);
+        LeanTween.alphaCanvas(_canvasGroup, 0f, _fadeOutTime);
         _imageCT.SetActive(false);
         //_blockedNext = false;
 
@@ -56,7 +66,7 @@ public class CTManager : MonoBehaviour
         var _chapterText = _chapterObject.GetComponent<TextMeshProUGUI>();
 
         _chapterText.text = $"Capítulo {chapter}";
-        LeanTween.alphaCanvas(_chapterCanvas, 1f, 3f);
+        LeanTween.alphaCanvas(_chapterCanvas, 1f, _fadeInText);
 
         //Title
         var _titleObject = GameObject.FindGameObjectWithTag("Title");
@@ -64,7 +74,7 @@ public class CTManager : MonoBehaviour
         var _titleCont = _titleObject.GetComponent<TextMeshProUGUI>();
         
         _titleCont.text = title.ToString();
-        LeanTween.alphaCanvas(_titleCanvas, 1f, 3f);
+        LeanTween.alphaCanvas(_titleCanvas, 1f, _fadeInText);
 
 
         return _currentChapter++;

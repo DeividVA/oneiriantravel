@@ -92,8 +92,8 @@ public class InkManager : MonoBehaviour
         _story.BindExternalFunction("ShowBackground", (string name)
           => _backgroundManager.ShowBackground(name));
 
-        _story.BindExternalFunction("HideBackground", ()
-          => _backgroundManager.HideBackground());
+        _story.BindExternalFunction("HideBackground", (string name)
+          => _backgroundManager.HideBackground(name));
 
         _story.BindExternalFunction("ShowItem", (string name)
           => _itemManager.ShowItem(name));
