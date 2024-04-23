@@ -431,8 +431,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 236676995}
-  - {fileID: 709277177}
   - {fileID: 1189472477}
+  - {fileID: 709277177}
   - {fileID: 1506591693}
   - {fileID: 10689946}
   - {fileID: 852156272}
@@ -1117,7 +1117,7 @@ MonoBehaviour:
   _titleList:
   - VIGILIA
   - ADORMIDERA
-  - "SUE\xD1O LIGERO"
+  - "SUE\xD1O"
   _imageCT: {fileID: 836653420}
   _fadeInTime: 2
   _fadeOutTime: 2
@@ -1436,7 +1436,7 @@ MonoBehaviour:
   Angry: {fileID: 0}
   Depressed: {fileID: 0}
   Doubt: {fileID: 0}
-  Iddle: {fileID: 21300000, guid: 30113f25e32ee9940a01676dd1fba333, type: 3}
+  Iddle: {fileID: 21300000, guid: d79a7c6c5a75110408441f1f973503ce, type: 3}
   Sad: {fileID: 0}
   Shocked: {fileID: 0}
   Sarcasm: {fileID: 0}
@@ -1459,7 +1459,7 @@ MonoBehaviour:
   Angry: {fileID: 0}
   Depressed: {fileID: 0}
   Doubt: {fileID: 0}
-  Iddle: {fileID: 21300000, guid: 6021907b4147a794b909bb261aa67f04, type: 3}
+  Iddle: {fileID: 21300000, guid: f52c7202c7aa4754cba62d5c466ab0f0, type: 3}
   Sad: {fileID: 0}
   Shocked: {fileID: 0}
   Sarcasm: {fileID: 0}
@@ -1823,7 +1823,7 @@ MonoBehaviour:
   _choiceButtonContainer: {fileID: 1428558621}
   _choiceButtonPrefab: {fileID: 1954023876901190946, guid: 0f8cf39b85da3834da65c62ce7deef91, type: 3}
   _normalTextColor: {r: 1, g: 1, b: 1, a: 1}
-  _thoughtTextColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+  _thoughtTextColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
   _deltaPointsText: {fileID: 523480848}
 --- !u!4 &1774782123
 Transform:
