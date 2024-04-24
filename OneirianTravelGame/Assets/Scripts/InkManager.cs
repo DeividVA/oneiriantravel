@@ -7,6 +7,7 @@ using TMPro;
 using Ink.Parsed;
 using Story = Ink.Runtime.Story;
 using Choice = Ink.Runtime.Choice;
+using UnityEngine.SceneManagement;
 //using Text = UnityEngine.UI.Text;
 
 public class InkManager : MonoBehaviour
@@ -147,6 +148,9 @@ public class InkManager : MonoBehaviour
         else if  (_story.currentChoices.Count > 0)
         {
             DisplayChoices();
+        } else
+        {
+            SceneManager.LoadScene(2);
         }
     }
 
