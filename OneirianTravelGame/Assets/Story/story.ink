@@ -398,7 +398,7 @@ Cheese: Vas a necesitar esto. {ChangeMood("Cheese", "Iddle")}
 Has obtenido Diccionario Onírico Multilingüe
 {HideItem()}
 Cheese: Y bien, amigo, bienvenido a tu cena de empresa. {ChangeMood("Cheese", "Sarcasm")}
-Alex: ¿Quéee? ¿Pero qué es esta locura? Estoy soñando, ¿verdad? {ChangeMood("Cheese", "Shocked")}
+Alex: ¿Quéee? ¿Pero qué es esta locura? Estoy soñando, ¿verdad? {ChangeMood("Alex", "Shocked")}
 Cheese: Tranquilo, no tendrás que estar consultándolo todo el tiempo. {ChangeMood("Cheese", "Sarcasm")}
 Cheese: Con tener el diccionario te valdrá para entenderles.
 Alex: ¿Se supone que ahora puedo mantener una conversación con estas... cosas?
@@ -525,7 +525,7 @@ Alex: Y más dibujos...
 {HideBackground("Shrine")}
 {ShowBackground("Epilogue")}
 
-Has acabado la demo con {DeltaWaves} ondas delta.
+Has acabado la demo con {DeltaWaves} ondas delta y con el reloj de {Need}
 Vas encaminado hacia los finales { DeltaWaves <= 6: Beta y Gamma} { DeltaWaves >  6: Alfa y Theta}
 
 En la versión final Alex llegará a la playa onírica, el paraíso soñado donde podrá ver gigantescas criaturas del mundo de los sueños. 

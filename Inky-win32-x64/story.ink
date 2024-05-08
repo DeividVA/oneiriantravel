@@ -398,7 +398,7 @@ Cheese: Vas a necesitar esto. {ChangeMood("Cheese", "Iddle")}
 Has obtenido Diccionario Onírico Multilingüe
 {HideItem()}
 Cheese: Y bien, amigo, bienvenido a tu cena de empresa. {ChangeMood("Cheese", "Sarcasm")}
-Alex: ¿Quéee? ¿Pero qué es esta locura? Estoy soñando, ¿verdad? {ChangeMood("Cheese", "Shocked")}
+Alex: ¿Quéee? ¿Pero qué es esta locura? Estoy soñando, ¿verdad? {ChangeMood("Alex", "Shocked")}
 Cheese: Tranquilo, no tendrás que estar consultándolo todo el tiempo. {ChangeMood("Cheese", "Sarcasm")}
 Cheese: Con tener el diccionario te valdrá para entenderles.
 Alex: ¿Se supone que ahora puedo mantener una conversación con estas... cosas?
